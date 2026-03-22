@@ -154,3 +154,19 @@ print(y_test.value_counts())
 data.to_csv("data/cleaned_data.csv", index=False)
 
 print("\nCleaned dataset saved successfully.")
+
+# =========================
+# FINAL DATASET (NO LEAKAGE)
+# =========================
+final_df = data.drop([
+    "phq_anxiety1",
+    "phq_anxiety2",
+    "phq_depression1",
+    "phq_depression2",
+    "phq_total"
+], axis=1)
+
+# Save final dataset
+final_df.to_csv("data/final_dataset.csv", index=False)
+
+print("\nFinal dataset saved as data/final_dataset.csv")
